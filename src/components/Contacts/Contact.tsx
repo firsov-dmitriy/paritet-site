@@ -2,7 +2,13 @@
 
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { MailLockOutlined, PhoneInTalkRounded } from "@mui/icons-material";
+import {
+  MailLockOutlined,
+  PermPhoneMsg,
+  PhoneInTalkRounded,
+  Telegram,
+  WhatsApp,
+} from "@mui/icons-material";
 import Button from "@mui/material/Button";
 
 function Contact() {
@@ -11,59 +17,142 @@ function Contact() {
       <Typography variant="h3" align="center">
         Связаться с нами
       </Typography>
-      <Box
-        sx={{
-          mt: 4,
-          display: "flex",
-          flexDirection: { xs: "column", sm: "row" },
-          gap: "8px",
-        }}
-      >
+      <Box>
         <Box
           sx={{
+            mt: 4,
             display: "flex",
-            alignItems: "center",
-            flexDirection: { xs: "column", md: "row" },
-            gap: "4px",
-            padding: "8px",
-            borderRadius: "8px",
-            bgcolor: "#CAD6B2",
+            flexDirection: { xs: "column", sm: "row" },
+            justifyContent: "center",
+            gap: "8px",
           }}
         >
-          <Typography variant="h6" color="#172a48">
-            Позвоните нам &mdash;
-          </Typography>
-          <Button
-            startIcon={<PhoneInTalkRounded />}
-            component="a"
-            sx={{ color: "#172a48" }}
-            href="tel:+79200088057"
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              flexDirection: { xs: "column", md: "row" },
+              gap: "4px",
+              padding: "24px",
+              borderRadius: "8px",
+              bgcolor: "#CAD6B2",
+              "&:hover": {
+                transform: "scale(1.02)",
+                cursor: "pointer",
+              },
+            }}
           >
-            +7 (920) 008-80-57
-          </Button>
+            <Typography variant="h6" color="#172a48">
+              Позвоните нам &mdash;
+            </Typography>
+            <Button
+              startIcon={<PhoneInTalkRounded />}
+              component="a"
+              sx={{ color: "#172a48", "&:hover": { bgcolor: "#CAD6B2" } }}
+              href="tel:+79200088057"
+            >
+              +7 (920) 008-80-57
+            </Button>
+          </Box>
+
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: "4px",
+              padding: "24px",
+              flexDirection: { xs: "column", md: "row" },
+              "&:hover": {
+                transform: "scale(1.02)",
+                cursor: "pointer",
+              },
+              borderRadius: "8px",
+              bgcolor: "#CAD6B2",
+            }}
+          >
+            <Typography variant="h6" color="#172a48">
+              Напишите нам &mdash;
+            </Typography>
+            <Button
+              startIcon={<MailLockOutlined />}
+              component="a"
+              sx={{ color: "#172a48", "&:hover": { bgcolor: "#CAD6B2" } }}
+              href="mailto:xxlaimxx1999@gmail.com"
+            >
+              xxlaimxx1999@gmail.com
+            </Button>
+          </Box>
         </Box>
 
         <Box
           sx={{
             display: "flex",
-            alignItems: "center",
-            gap: "4px",
-            padding: "8px",
-            flexDirection: { xs: "column", md: "row" },
-            borderRadius: "8px",
-            bgcolor: "#CAD6B2",
+            justifyContent: "space-around",
+            gap: "8px",
+            marginTop: "8px",
           }}
         >
-          <Typography variant="h6" color="#172a48">
-            Напишите нам &mdash;
-          </Typography>
           <Button
-            startIcon={<MailLockOutlined />}
             component="a"
-            sx={{ color: "#172a48" }}
+            fullWidth
+            sx={{
+              color: "#172a48",
+              bgcolor: "#CAD6B2",
+              padding: "24px",
+              borderRadius: "8px",
+              textTransform: "None",
+
+              "&:hover": {
+                transform: "scale(1.02)",
+                cursor: "pointer",
+                bgcolor: "#CAD6B2",
+              },
+            }}
             href="mailto:xxlaimxx1999@gmail.com"
+            startIcon={<Telegram />}
           >
-            xxlaimxx1999@gmail.com
+            <Typography variant="h6">Telegram</Typography>
+          </Button>
+          <Button
+            fullWidth
+            component="a"
+            sx={{
+              color: "#172a48",
+              bgcolor: "#CAD6B2",
+              padding: "24px",
+              borderRadius: "8px",
+              textTransform: "None",
+
+              "&:hover": {
+                transform: "scale(1.02)",
+                cursor: "pointer",
+                bgcolor: "#CAD6B2",
+              },
+            }}
+            href="mailto:xxlaimxx1999@gmail.com"
+            startIcon={<WhatsApp />}
+          >
+            <Typography variant="h6">WhatsApp</Typography>
+          </Button>
+          <Button
+            fullWidth
+            component="a"
+            sx={{
+              color: "#172a48",
+              bgcolor: "#CAD6B2",
+              padding: "24px",
+              borderRadius: "8px",
+              textTransform: "None",
+              "&:hover": {
+                transform: "scale(1.02)",
+                cursor: "pointer",
+                bgcolor: "#CAD6B2",
+              },
+            }}
+            href="mailto:xxlaimxx1999@gmail.com"
+            startIcon={<PermPhoneMsg />}
+          >
+            <Typography variant="h6">Viber</Typography>
           </Button>
         </Box>
       </Box>
