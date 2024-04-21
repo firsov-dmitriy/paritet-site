@@ -31,7 +31,7 @@ function Slider() {
         <SwiperSlide key={image}>
           <Box
             sx={{
-              padding: "50px",
+              padding: { xs: "30px 0", md: "50px" },
             }}
           >
             <Image

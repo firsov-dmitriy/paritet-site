@@ -14,7 +14,7 @@ function AboutAllocator({ text }: { text: string }) {
 }
 function About() {
   return (
-    <Box pt={4}>
+    <Box pt={4} id="about">
       <Typography variant="h3" textAlign="center">
         О Компании
       </Typography>

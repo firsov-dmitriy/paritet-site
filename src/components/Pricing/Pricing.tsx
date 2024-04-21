@@ -25,7 +25,7 @@ export default function Pricing() {
   };
 
   return (
-    <Box mt={5}>
+    <Box mt={5} id="price">
       <Box>
         <Box>
           <Box>
@@ -34,7 +34,6 @@ export default function Pricing() {
                 display: "flex",
                 justifyContent: "center",
               }}
-              color="primary"
               value={alignment}
               exclusive
               onChange={handleChange}
@@ -58,7 +57,7 @@ export default function Pricing() {
                     paddingTop: "16px",
                   }}
                 />
-                <Box pt="16px">
+                <Box pt="16px" display="flex" gap={1}>
                   {graveItems.map((item) => (
                     <Chip key={item} label={item} />
                   ))}
@@ -79,7 +78,7 @@ export default function Pricing() {
                     paddingTop: "16px",
                   }}
                 />
-                <Box pt="16px">
+                <Box pt="16px" display="flex" gap={1}>
                   {solutionItems.map((item) => (
                     <Chip key={item} label={item} />
                   ))}

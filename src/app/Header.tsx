@@ -18,7 +18,11 @@ import Image from "next/image";
 import { Container } from "@mui/material";
 
 const drawerWidth = 240;
-const navItems = ["О компании", "Цены", "Контакты"];
+const navItems = [
+  { title: "О компании", link: "about" },
+  { title: "Цены", link: "price" },
+  { title: "Контакты", link: "contacts" },
+];
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -35,9 +39,9 @@ export default function Header() {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+          <ListItem key={item.link} disablePadding>
+            <ListItemButton sx={{ textAlign: "center" }} href={`#${item.link}`}>
+              <ListItemText primary={item.title} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -118,8 +122,12 @@ export default function Header() {
 
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
-                {item}
+              <Button
+                key={item.link}
+                sx={{ color: "#fff" }}
+                href={`#${item.link}`}
+              >
+                {item.title}
               </Button>
             ))}
           </Box>
