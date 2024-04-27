@@ -106,7 +106,7 @@ export default function Pricing() {
           <BasicTable rows={solution} title="Раствор" />
         </Box>
         <Typography component="p" variant="h6" textAlign="center">
-          Стоимость доставки < >{priceDelivery} за 1 м3</strong>.
+          Стоимость доставки <strong>{priceDelivery} за 1 м3</strong>.
         </Typography>
         <Typography component="p" variant="h6" textAlign="center">
           При загрузке миксера по городу <strong>менее 9 м3</strong> оплата
