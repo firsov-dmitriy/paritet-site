@@ -9,6 +9,10 @@ import { useState } from "react";
 import { ToggleButton, ToggleButtonGroup } from "@mui/lab";
 import Divider from "@mui/material/Divider";
 
+const formatter = new Intl.NumberFormat("ru-RU", {
+  style: "currency",
+  currency: "RUB",
+});
 export default function Pricing() {
   const [alignment, setAlignment] = useState<"grave" | "solution">("grave");
   const graveItems = ["фундаменты зданий", "дорожные покрытия", "стены"];
@@ -23,7 +27,7 @@ export default function Pricing() {
   ) => {
     setAlignment(newAlignment);
   };
-
+  const priceDelivery = formatter.format(700);
   return (
     <Box mt={5} id="price">
       <Box>
@@ -39,8 +43,8 @@ export default function Pricing() {
               onChange={handleChange}
               aria-label="Platform"
             >
-              <ToggleButton value="grave">О бетона</ToggleButton>
-              <ToggleButton value="solution">О растворе</ToggleButton>
+              <ToggleButton value="grave">Бетон</ToggleButton>
+              <ToggleButton value="solution">Раствор</ToggleButton>
             </ToggleButtonGroup>
           </Box>
           <Box px={{ md: 20 }} py={1}>
@@ -57,7 +61,14 @@ export default function Pricing() {
                     paddingTop: "16px",
                   }}
                 />
-                <Box pt="16px" display="flex" gap={1}>
+                <Box
+                  pt="16px"
+                  display="flex"
+                  gap={1}
+                  sx={{
+                    flexWrap: "wrap",
+                  }}
+                >
                   {graveItems.map((item) => (
                     <Chip key={item} label={item} />
                   ))}
@@ -94,6 +105,13 @@ export default function Pricing() {
           <BasicTable rows={graveСoncrete} title="Бетон на гравии" />
           <BasicTable rows={solution} title="Раствор" />
         </Box>
+        <Typography component="p" variant="h6" textAlign="center">
+          Стоимость доставки < >{priceDelivery} за 1 м3</strong>.
+        </Typography>
+        <Typography component="p" variant="h6" textAlign="center">
+          При загрузке миксера по городу <strong>менее 9 м3</strong> оплата
+          доставки <strong>за 9 м3</strong>
+        </Typography>
       </Box>
     </Box>
   );

@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Slider from "@/components/Slider/Slider";
 
-function AboutAllocator({ text }: { text: string }) {
+export function AboutAllocator({ text }: { text: string }) {
   return (
     <Typography component="span" color="orange">
       {text}

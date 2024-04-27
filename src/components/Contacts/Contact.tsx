@@ -27,7 +27,8 @@ function Contact() {
             gap: "8px",
           }}
         >
-          <Box
+          <Button
+            href="tel:+79200088057"
             sx={{
               display: "flex",
               alignItems: "center",
@@ -39,6 +40,8 @@ function Contact() {
               "&:hover": {
                 transform: "scale(1.02)",
                 cursor: "pointer",
+                color: "#172a48",
+                bgcolor: "#CAD6B2",
               },
             }}
           >
@@ -49,13 +52,13 @@ function Contact() {
               startIcon={<PhoneInTalkRounded />}
               component="a"
               sx={{ color: "#172a48", "&:hover": { bgcolor: "#CAD6B2" } }}
-              href="tel:+79200088057"
             >
               +7 (920) 008-80-57
             </Button>
-          </Box>
+          </Button>
 
-          <Box
+          <Button
+            href="mailto:xxlaimxx1999@gmail.com"
             sx={{
               display: "flex",
               alignItems: "center",
@@ -65,6 +68,8 @@ function Contact() {
               "&:hover": {
                 transform: "scale(1.02)",
                 cursor: "pointer",
+                color: "#172a48",
+                bgcolor: "#CAD6B2",
               },
               borderRadius: "8px",
               bgcolor: "#CAD6B2",
@@ -77,11 +82,10 @@ function Contact() {
               startIcon={<MailLockOutlined />}
               component="a"
               sx={{ color: "#172a48", "&:hover": { bgcolor: "#CAD6B2" } }}
-              href="mailto:xxlaimxx1999@gmail.com"
             >
               xxlaimxx1999@gmail.com
             </Button>
-          </Box>
+          </Button>
         </Box>
 
         <Box
@@ -101,14 +105,15 @@ function Contact() {
               padding: "24px",
               borderRadius: "8px",
               textTransform: "None",
-
+              flexWrap: "wrap",
               "&:hover": {
                 transform: "scale(1.02)",
                 cursor: "pointer",
                 bgcolor: "#CAD6B2",
               },
             }}
-            href="mailto:xxlaimxx1999@gmail.com"
+            target="_blank"
+            href="https://t.me/paritet52"
             startIcon={<Telegram />}
           >
             <Typography variant="h6">Telegram</Typography>
@@ -122,14 +127,15 @@ function Contact() {
               padding: "24px",
               borderRadius: "8px",
               textTransform: "None",
-
+              flexWrap: "wrap",
               "&:hover": {
                 transform: "scale(1.02)",
                 cursor: "pointer",
                 bgcolor: "#CAD6B2",
               },
             }}
-            href="mailto:xxlaimxx1999@gmail.com"
+            target="_blank"
+            href="https://wa.me/+79200088057"
             startIcon={<WhatsApp />}
           >
             <Typography variant="h6">WhatsApp</Typography>
@@ -143,6 +149,7 @@ function Contact() {
               padding: "24px",
               borderRadius: "8px",
               textTransform: "None",
+              flexWrap: "wrap",
               "&:hover": {
                 transform: "scale(1.02)",
                 cursor: "pointer",
