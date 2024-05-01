@@ -36,12 +36,12 @@ function Contact() {
               gap: "4px",
               padding: "24px",
               borderRadius: "8px",
-              bgcolor: "#CAD6B2",
+              bgcolor: "#f5f5f5",
               "&:hover": {
                 transform: "scale(1.02)",
                 cursor: "pointer",
                 color: "#172a48",
-                bgcolor: "#CAD6B2",
+                bgcolor: "#f5f5f5",
               },
             }}
           >
@@ -51,7 +51,7 @@ function Contact() {
             <Button
               startIcon={<PhoneInTalkRounded />}
               component="a"
-              sx={{ color: "#172a48", "&:hover": { bgcolor: "#CAD6B2" } }}
+              sx={{ color: "#172a48", "&:hover": { bgcolor: "#f5f5f5" } }}
             >
               +7 (920) 008-80-57
             </Button>
@@ -69,10 +69,10 @@ function Contact() {
                 transform: "scale(1.02)",
                 cursor: "pointer",
                 color: "#172a48",
-                bgcolor: "#CAD6B2",
+                bgcolor: "#f5f5f5",
               },
               borderRadius: "8px",
-              bgcolor: "#CAD6B2",
+              bgcolor: "#f5f5f5",
             }}
           >
             <Typography variant="h6" color="#172a48">
@@ -81,7 +81,7 @@ function Contact() {
             <Button
               startIcon={<MailLockOutlined />}
               component="a"
-              sx={{ color: "#172a48", "&:hover": { bgcolor: "#CAD6B2" } }}
+              sx={{ color: "#172a48", "&:hover": { bgcolor: "#f5f5f5" } }}
             >
               xxlaimxx1999@gmail.com
             </Button>
@@ -101,7 +101,7 @@ function Contact() {
             fullWidth
             sx={{
               color: "#172a48",
-              bgcolor: "#CAD6B2",
+              bgcolor: "#f5f5f5",
               padding: "24px",
               borderRadius: "8px",
               textTransform: "None",
@@ -109,7 +109,7 @@ function Contact() {
               "&:hover": {
                 transform: "scale(1.02)",
                 cursor: "pointer",
-                bgcolor: "#CAD6B2",
+                bgcolor: "#f5f5f5",
               },
             }}
             target="_blank"
@@ -123,7 +123,7 @@ function Contact() {
             component="a"
             sx={{
               color: "#172a48",
-              bgcolor: "#CAD6B2",
+              bgcolor: "#f5f5f5",
               padding: "24px",
               borderRadius: "8px",
               textTransform: "None",
@@ -131,7 +131,7 @@ function Contact() {
               "&:hover": {
                 transform: "scale(1.02)",
                 cursor: "pointer",
-                bgcolor: "#CAD6B2",
+                bgcolor: "#f5f5f5",
               },
             }}
             target="_blank"
@@ -145,7 +145,7 @@ function Contact() {
             component="a"
             sx={{
               color: "#172a48",
-              bgcolor: "#CAD6B2",
+              bgcolor: "#f5f5f5",
               padding: "24px",
               borderRadius: "8px",
               textTransform: "None",
@@ -153,7 +153,7 @@ function Contact() {
               "&:hover": {
                 transform: "scale(1.02)",
                 cursor: "pointer",
-                bgcolor: "#CAD6B2",
+                bgcolor: "#f5f5f5",
               },
             }}
             href="mailto:xxlaimxx1999@gmail.com"

@@ -6,11 +6,17 @@ import theme from "@/theme";
 import React from "react";
 import Header from "@/app/Header";
 import Footer from "@/app/Footer";
+import { openGraphImage } from "@/constant";
 
 export const metadata: Metadata = {
   title: "Paritet - Надежные перевозки бетона",
   description:
     "Paritet - ваш надежный партнер в перевозках бетона. Мы специализируемся на быстрой и эффективной доставке бетонных смесей по всей области. Наш опытный персонал и современный автопарк обеспечивают безопасную и своевременную доставку, удовлетворяя потребности как мелких строительных компаний, так и крупных инфраструктурных проектов.",
+  openGraph: {
+    title: "Paritet",
+    description: "Paritet - ваш надежный партнер в перевозках бетона",
+    images: openGraphImage,
+  },
 };
 
 export default function RootLayout({

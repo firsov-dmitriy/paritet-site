@@ -26,14 +26,20 @@ const formatter = new Intl.NumberFormat("ru-RU", {
 });
 function SimpleTable(props: IBasicTable) {
   const { rows, title } = props;
+
   return (
-    <Box bgcolor="#f5f5f5" borderRadius="20px">
+    <Box
+      bgcolor="#f5f5f5"
+      sx={{
+        borderRadius: { xs: "12px", md: "20px" },
+      }}
+    >
       <Typography py={5} variant="h6" align="center">
         {title}
       </Typography>
       <TableContainer component={Paper}>
         <Table
-          sx={{ minWidth: 650, bgcolor: "#f5f5f5" }}
+          sx={{ minWidth: { md: 650, xs: 320 }, bgcolor: "#f5f5f5" }}
           aria-label="simple table"
         >
           <TableHead>
@@ -49,11 +55,30 @@ function SimpleTable(props: IBasicTable) {
                 key={row.name}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell component="th" scope="row">
+                <TableCell
+                  sx={{
+                    padding: { xs: "8px", md: "16px" },
+                  }}
+                  component="th"
+                  scope="row"
+                >
                   {row.name}
                 </TableCell>
-                <TableCell align="left">{row.unit}</TableCell>
-                <TableCell align="left">
+                <TableCell
+                  sx={{
+                    width: { xs: "10px", md: "33%" },
+                    padding: { xs: "8px", md: "16px" },
+                  }}
+                  align="left"
+                >
+                  {row.unit}
+                </TableCell>
+                <TableCell
+                  sx={{
+                    padding: { xs: "8px", md: "16px" },
+                  }}
+                  align="left"
+                >
                   {formatter.format(row.price)}
                 </TableCell>
               </TableRow>

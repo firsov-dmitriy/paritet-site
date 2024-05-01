@@ -23,6 +23,7 @@ function Slider() {
         pauseOnMouseEnter: true,
         disableOnInteraction: false,
       }}
+      loop
       spaceBetween={50}
       slidesPerView={1}
       modules={[Pagination, Navigation, Autoplay]}

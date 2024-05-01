@@ -75,3 +75,6 @@ export const solution: Array<RowItem> = [
     price: 5400,
   },
 ];
+
+export const openGraphImage =
+  "https://img.icons8.com/external-smashingstocks-hand-drawn-black-smashing-stocks/99/external-concrete-mixer-transportation-smashingstocks-hand-drawn-black-smashing-stocks.png";

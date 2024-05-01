@@ -8,6 +8,7 @@ import { Chip, Collapse } from "@mui/material";
 import { useState } from "react";
 import { ToggleButton, ToggleButtonGroup } from "@mui/lab";
 import Divider from "@mui/material/Divider";
+import { useMediaQuery } from "@mui/system";
 
 const formatter = new Intl.NumberFormat("ru-RU", {
   style: "currency",
@@ -28,6 +29,8 @@ export default function Pricing() {
     setAlignment(newAlignment);
   };
   const priceDelivery = formatter.format(700);
+  const isMobile = useMediaQuery("(max-width:600px)");
+
   return (
     <Box mt={5} id="price">
       <Box>
@@ -77,7 +80,7 @@ export default function Pricing() {
             </Collapse>
 
             <Collapse in={alignment === "solution"}>
-              <Typography>
+              <Typography component="div">
                 Раствор - это смесь цемента, песка и воды, используемая в
                 строительстве для кладки стен, затирки швов, штукатурки
                 поверхностей и других строительных работ. Он обладает хорошей
@@ -105,13 +108,23 @@ export default function Pricing() {
           <BasicTable rows={graveСoncrete} title="Бетон на гравии" />
           <BasicTable rows={solution} title="Раствор" />
         </Box>
-        <Typography component="p" variant="h6" textAlign="center">
-          Стоимость доставки <strong>{priceDelivery} за 1 м3</strong>.
-        </Typography>
-        <Typography component="p" variant="h6" textAlign="center">
-          При загрузке миксера по городу <strong>менее 9 м3</strong> оплата
-          доставки <strong>за 9 м3</strong>
-        </Typography>
+        <Box sx={{ bgcolor: "#f5f5f5", padding: "16px", borderRadius: "8px" }}>
+          <Typography
+            component="div"
+            variant={isMobile ? "body1" : "h6"}
+            textAlign="center"
+          >
+            Стоимость доставки <strong>{priceDelivery} за 1 м3</strong>.
+          </Typography>
+          <Typography
+            component="div"
+            variant={isMobile ? "body1" : "h6"}
+            textAlign="center"
+          >
+            При загрузке миксера по городу <strong>менее 9 м3</strong> оплата
+            доставки <strong>за 9 м3</strong>
+          </Typography>
+        </Box>
       </Box>
     </Box>
   );
