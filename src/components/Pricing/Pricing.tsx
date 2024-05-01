@@ -52,7 +52,7 @@ export default function Pricing() {
           </Box>
           <Box px={{ md: 20 }} py={1}>
             <Collapse in={alignment === "grave"}>
-              <Typography>
+              <Typography component="div">
                 Бетон на гравии - это тип бетона, где гравий используется в
                 качестве одного из основных составляющих заполнителей. Гравий
                 добавляется для увеличения прочности и устойчивости бетона. Этот
@@ -64,14 +64,7 @@ export default function Pricing() {
                     paddingTop: "16px",
                   }}
                 />
-                <Box
-                  pt="16px"
-                  display="flex"
-                  gap={1}
-                  sx={{
-                    flexWrap: "wrap",
-                  }}
-                >
+                <Box pt="16px" display="flex" gap={1} flexWrap="wrap">
                   {graveItems.map((item) => (
                     <Chip key={item} label={item} />
                   ))}
@@ -92,7 +85,7 @@ export default function Pricing() {
                     paddingTop: "16px",
                   }}
                 />
-                <Box pt="16px" display="flex" gap={1}>
+                <Box pt="16px" display="flex" gap={1} flexWrap="wrap">
                   {solutionItems.map((item) => (
                     <Chip key={item} label={item} />
                   ))}
