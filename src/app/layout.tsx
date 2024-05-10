@@ -7,6 +7,7 @@ import React from "react";
 import Header from "@/app/Header";
 import Footer from "@/app/Footer";
 import { openGraphImage } from "@/constant";
+import { Metrika } from "@/components/Metrika";
 
 export const metadata: Metadata = {
   title: "Paritet - Надежные перевозки бетона",
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <meta name="yandex-verification" content="43c9d914c9e4d7b1" />
+      <Metrika />
       <body>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
