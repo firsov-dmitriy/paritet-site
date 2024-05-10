@@ -26,8 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <meta name="yandex-verification" content="b584974a991eb498" />
-
+      <meta name="yandex-verification" content="43c9d914c9e4d7b1" />
       <body>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
