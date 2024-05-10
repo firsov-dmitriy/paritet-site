@@ -9,7 +9,9 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "import/no-extraneous-dependencies":  "off"
+    "import/no-extraneous-dependencies":  "off",
+    "import/prefer-default-export": "off",
+    "react/jsx-props-no-spreading" : "off"
 
   }
 }

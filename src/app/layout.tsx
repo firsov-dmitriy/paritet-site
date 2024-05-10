@@ -7,6 +7,7 @@ import React from "react";
 import Header from "@/app/Header";
 import Footer from "@/app/Footer";
 import { openGraphImage } from "@/constant";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Paritet - Надежные перевозки бетона",
@@ -26,6 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
+      <Head>
+        <meta name="yandex-verification" content="b584974a991eb498" />
+      </Head>
       <body>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
