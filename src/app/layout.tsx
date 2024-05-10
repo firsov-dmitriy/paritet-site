@@ -7,7 +7,6 @@ import React from "react";
 import Header from "@/app/Header";
 import Footer from "@/app/Footer";
 import { openGraphImage } from "@/constant";
-import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Paritet - Надежные перевозки бетона",
