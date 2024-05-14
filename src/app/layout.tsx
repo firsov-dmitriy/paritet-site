@@ -18,6 +18,10 @@ export const metadata: Metadata = {
     description: "Paritet - ваш надежный партнер в перевозках бетона",
     images: openGraphImage,
   },
+  verification: {
+    yandex: process.env.YANDEX_VEREFICATION,
+    google: process.env.GOOGLE_VEREFICATION,
+  },
 };
 
 export default function RootLayout({
@@ -27,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <meta name="yandex-verification" content="43c9d914c9e4d7b1" />
+      <link rel="icon" href="/favicon.ico" sizes="any" />
       <Metrika />
       <body>
         <AppRouterCacheProvider>
