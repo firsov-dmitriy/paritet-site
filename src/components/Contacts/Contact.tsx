@@ -72,7 +72,9 @@ function Contact() {
                     _target: item.target,
                   }}
                 >
-                  {item.title.text}
+                  <Typography variant="h6" color="#172a48">
+                    {item.title.text}
+                  </Typography>
                 </ContactButton>
               );
             }

@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import { useEffect, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -25,7 +25,8 @@ const navItems = [
 ];
 
 export default function Header() {
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [isScroll, setIsScroll] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -49,6 +50,23 @@ export default function Header() {
     </Box>
   );
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const { scrollY } = window;
+      if (scrollY > 20) {
+        setIsScroll(true);
+      } else {
+        setIsScroll(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <Box display="flex">
       <CssBaseline />
@@ -57,6 +75,10 @@ export default function Header() {
         component="nav"
         sx={{
           padding: "0 16px",
+          transition: "background-color 0.6s ease",
+          ...(isScroll
+            ? { bgcolor: "#b3792e" }
+            : { bgcolor: "white", boxShadow: "none" }),
         }}
       >
         <Container
@@ -72,6 +94,7 @@ export default function Header() {
               mr: 2,
               display: { xs: "flex", sm: "none" },
               justifyContent: "space-between",
+              alignItems: "center",
             }}
           >
             <Box
@@ -88,15 +111,30 @@ export default function Header() {
                 src="/images/mixer.png"
                 alt="mixer"
               />
-              <Typography variant="h6" component="div">
+              <Typography
+                variant="h6"
+                component="h6"
+                sx={{
+                  color: isScroll ? "white" : "black",
+                }}
+              >
                 Paritet
               </Typography>
             </Box>
             <IconButton
               color="inherit"
               aria-label="open drawer"
-              edge="start"
               onClick={handleDrawerToggle}
+              sx={{
+                color: isScroll ? "white" : "black",
+                transition: "background-color 0.3s ease",
+                padding: "10px",
+                borderRadius: "16px",
+                "&:hover": {
+                  bgcolor: isScroll ? "white" : "#b3792e",
+                  color: isScroll ? "#b3792e" : "white",
+                },
+              }}
             >
               <MenuIcon />
             </IconButton>
@@ -115,16 +153,34 @@ export default function Header() {
             }}
           >
             <Image width="64" height="64" src="/images/mixer.png" alt="mixer" />
-            <Typography variant="h6" component="div">
+            <Typography
+              variant="h6"
+              component="h6"
+              sx={{
+                color: isScroll ? "white" : "black",
+              }}
+            >
               Paritet
             </Typography>
           </Box>
 
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box
+            sx={{
+              display: { xs: "none", sm: "block" },
+              paddingBottom: "4px",
+              borderBottom: `2px solid ${isScroll ? "white" : "#b3792e"}`,
+            }}
+          >
             {navItems.map((item) => (
               <Button
                 key={item.link}
-                sx={{ color: "#fff" }}
+                sx={{
+                  color: isScroll ? "white" : "black",
+                  "&:hover": {
+                    bgcolor: isScroll ? "white" : "#b3792e",
+                    color: isScroll ? "#b3792e" : "white",
+                  },
+                }}
                 href={`#${item.link}`}
               >
                 {item.title}

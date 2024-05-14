@@ -11,7 +11,11 @@ import {
 } from "@mui/material";
 
 export type RowItem = {
-  name: string;
+  brand?: string;
+  concreteClass?: string;
+  frostResistance?: string;
+  waterResistance?: string;
+  name?: string;
   unit: string;
   price: number;
 };
@@ -44,7 +48,15 @@ function SimpleTable(props: IBasicTable) {
         >
           <TableHead>
             <TableRow>
-              <TableCell>Наименование продукции</TableCell>
+              {!rows[0].waterResistance && <TableCell>Наименование</TableCell>}
+              {rows[0].waterResistance && (
+                <>
+                  <TableCell>Марка бетона</TableCell>
+                  <TableCell>Класс бетона</TableCell>
+                  <TableCell>Морозостойкость</TableCell>
+                  <TableCell>Водонепроницаемость</TableCell>
+                </>
+              )}
               <TableCell align="left">Единица измерения</TableCell>
               <TableCell align="left">Цена (руб.) с НДС</TableCell>
             </TableRow>
@@ -52,18 +64,64 @@ function SimpleTable(props: IBasicTable) {
           <TableBody>
             {rows.map((row) => (
               <TableRow
-                key={row.name}
+                key={row.name || row.brand}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell
-                  sx={{
-                    padding: { xs: "8px", md: "16px" },
-                  }}
-                  component="th"
-                  scope="row"
-                >
-                  {row.name}
-                </TableCell>
+                {row.name && (
+                  <TableCell
+                    sx={{
+                      padding: { xs: "8px", md: "16px" },
+                    }}
+                    component="th"
+                    scope="row"
+                  >
+                    {row.name}
+                  </TableCell>
+                )}
+                {row.brand && (
+                  <TableCell
+                    sx={{
+                      padding: { xs: "8px", md: "16px" },
+                    }}
+                    component="th"
+                    scope="row"
+                  >
+                    {row.brand}
+                  </TableCell>
+                )}
+                {row.concreteClass && (
+                  <TableCell
+                    sx={{
+                      padding: { xs: "8px", md: "16px" },
+                    }}
+                    component="th"
+                    scope="row"
+                  >
+                    {row.concreteClass}
+                  </TableCell>
+                )}
+                {row.frostResistance && (
+                  <TableCell
+                    sx={{
+                      padding: { xs: "8px", md: "16px" },
+                    }}
+                    component="th"
+                    scope="row"
+                  >
+                    {row.frostResistance}
+                  </TableCell>
+                )}
+                {row.waterResistance && (
+                  <TableCell
+                    sx={{
+                      padding: { xs: "8px", md: "16px" },
+                    }}
+                    component="th"
+                    scope="row"
+                  >
+                    {row.waterResistance}
+                  </TableCell>
+                )}
                 <TableCell
                   sx={{
                     width: { xs: "10px", md: "33%" },
