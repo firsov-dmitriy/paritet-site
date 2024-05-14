@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <link rel="icon" href="/favicon.ico" sizes="any" />
+      <link rel="icon" href="/src/app/favicon.ico" sizes="any" />
       <Metrika />
       <body>
         <AppRouterCacheProvider>
